@@ -10,14 +10,11 @@ package m2iatelierjava.entite;
  * @author Administrateur
  */
 public class Synthe {
-   
+
     private boolean on;
     private String instrument;
     private int volume;
 
-    
-        
-    
     public boolean isOn() {
         return on;
     }
@@ -42,43 +39,63 @@ public class Synthe {
         this.volume = volume;
     }
 
-    public Synthe(boolean on, String instrument, int volume) {
-        this.on = on;
-        this.instrument = instrument;
-        this.volume = volume;
+    public Synthe (){
+        
+    this.on=false;
+    this.volume = 5;
+    this.instrument = "piano";
+          
     }
-    
-    public void allumageOnOff(boolean On){
-        
-        if (On == false){
-           on = true;
-           instrument ="piano";
-           volume = 5;
+
+
+    public void initialise(boolean on, String instrument, int volume) {
+       this.on = on;
+       this.instrument = instrument;
+       this.volume = volume;
+    }
+
+    public void allumageOnOff() {
+
+        if (this.on == true) {
+            this.on = false;
+            instrument = "piano";
+            volume = 5;
+            
+            System.out.println("Synthé éteint.");
+            
         } else {
-           on = false;
-       
+            this.on = true;
+            System.out.println("synthé allumé.Instrument : " + this.instrument);
+                    
         }
-        
-            
-        }
-        
-    public void volumePlus(){
-            
-            if (volume < 10)
-            
+
+    }
+
+    public void volumePlus() {
+
+        if (volume < 10) {
             volume = volume + 1;
-            
         }
-                   
-        public void volumeMoins(){
 
-            if (volume >0)
+    }
 
-              volume --;
+    public void volumeMoins() {
+
+        if (volume > 0) {
+            volume--;
         }
-    public void jouerNote ();
+    }
+
+    public void jouerNote(String melodie){
+        System.out.println ();
+    }
+
     
-            
+        
+    public Synthe(boolean on) {
+        this.on = on;
+    }
+
     
 
 }
